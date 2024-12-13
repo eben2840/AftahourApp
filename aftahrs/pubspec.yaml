@@ -51,7 +51,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -90,14 +90,20 @@ flutter:
     - family: Splash
       fonts:
         - asset: assets/fonts/Splash Text.otf
-        # - asset: fonts/Schyler-Italic.ttf
           weight: 700
           # style: italic
-    # - family: Text Body
-    #   fonts:
-    #     - asset: assets/fonts/Text Body.OTF
-    #     # - asset: fonts/TrajanPro_Bold.ttf
-    #       # weight: 700
+
+    - family: Title
+      fonts:
+        - asset: assets/fonts/Text_Title.otf
+        # - asset: fonts/TrajanPro_Bold.ttf
+          weight: 700
+    
+    - family: Body
+      fonts:
+        - asset: assets/fonts/Text_Body.otf
+        # - asset: fonts/TrajanPro_Bold.ttf
+          weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

@@ -8,13 +8,13 @@ class StoreCard extends StatelessWidget {
   final String deliveryTime;
 
   const StoreCard({
-    Key? key,
+    super.key,
     required this.image,
     required this.name,
     required this.rating,
     required this.price,
     required this.deliveryTime,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

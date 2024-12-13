@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 // import '.../widgets/store_card.dart';
 
 class HomepageScreen extends StatelessWidget {
-  const HomepageScreen({Key? key}) : super(key: key);
+  const HomepageScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +97,7 @@ class HomepageScreen extends StatelessWidget {
                           "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/640px-Good_Food_Display_-_NCI_Visuals_Online.jpg",
                       name: "Lorem Ipsum",
                       rating: "4.0",
-                      price: "\$35",
+                      price: "35",
                       deliveryTime: "20-40mins",
                     ),
                     SizedBox(width: 10),
@@ -106,7 +106,56 @@ class HomepageScreen extends StatelessWidget {
                           "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
                       name: "Lorem Ipsum",
                       rating: "4.2",
-                      price: "\$40",
+                      price: "40",
+                      deliveryTime: "30-50mins",
+                    ),
+                    SizedBox(width: 10),
+                    StoreCard(
+                      image:
+                          "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
+                      name: "Lorem Ipsum",
+                      rating: "4.2",
+                      price: "40",
+                      deliveryTime: "30-50mins",
+                    ),
+                  ],
+                ),
+              ),
+
+              const Text(
+                "Local Stores",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 200,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    StoreCard(
+                      image:
+                          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/640px-Good_Food_Display_-_NCI_Visuals_Online.jpg",
+                      name: "Lorem Ipsum",
+                      rating: "4.0",
+                      price: "35",
+                      deliveryTime: "20-40mins",
+                    ),
+                    SizedBox(width: 10),
+                    StoreCard(
+                      image:
+                          "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
+                      name: "Lorem Ipsum",
+                      rating: "4.2",
+                      price: "40",
+                      deliveryTime: "30-50mins",
+                    ),
+                    SizedBox(width: 10),
+                    StoreCard(
+                      image:
+                          "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
+                      name: "Lorem Ipsum",
+                      rating: "4.2",
+                      price: "40",
                       deliveryTime: "30-50mins",
                     ),
                   ],

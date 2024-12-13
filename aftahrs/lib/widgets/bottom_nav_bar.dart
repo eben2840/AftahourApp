@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class CustomBottomNavigationBar extends StatefulWidget {
   final int selectedIndex;
 
-  const CustomBottomNavigationBar({Key? key, required this.selectedIndex})
-      : super(key: key);
+  const CustomBottomNavigationBar({super.key, required this.selectedIndex});
 
   @override
   _CustomBottomNavigationBarState createState() =>
@@ -55,7 +54,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           currentIndex: widget.selectedIndex,
           onTap: (index) {
             if (index == 0) {
-              Navigator.pushReplacementNamed(context, '/');
+              Navigator.pushReplacementNamed(context, '/homepage');
             } else if (index == 1) {
               Navigator.pushReplacementNamed(context, '/orders');
             } else if (index == 2) {
