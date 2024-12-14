@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class CustomBottomNavigationBar extends StatefulWidget {
   final int selectedIndex;
 
-  const CustomBottomNavigationBar({Key? key, required this.selectedIndex})
-      : super(key: key);
+  const CustomBottomNavigationBar({super.key, required this.selectedIndex});
 
   @override
   _CustomBottomNavigationBarState createState() =>

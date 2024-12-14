@@ -1,30 +1,33 @@
+
 import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 
-class LoginScreen extends StatelessWidget {
+class Signup_RegsiterState extends StatelessWidget {
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  LoginScreen({super.key});
+  Signup_RegsiterState({super.key});
 
-  void loginUser(BuildContext context) async {
-    if (emailController.text.isEmpty || passwordController.text.isEmpty) {
+  void signUser(BuildContext context) async {
+    if (nameController.text.isEmpty ||emailController.text.isEmpty || passwordController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Please fill in all fields')),
       );
       return;
     }
 
-    bool success = await ApiService.login(
+    bool success = await ApiService.signup(
+      nameController.text,
       emailController.text,
       passwordController.text,
     );
 
     if (success) {
-      Navigator.pushReplacementNamed(context, '/homepage');
+      Navigator.pushReplacementNamed(context, '/login');
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Login failed. Please try again.')),
+        SnackBar(content: Text('SignUp failed. Please try again.')),
       );
     }
   }
@@ -56,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      'Login',
+                      'SignUp',
                       style: TextStyle(
                         fontSize: 30.0,
                         fontFamily: 'Splash',
@@ -68,12 +71,8 @@ class LoginScreen extends StatelessWidget {
                     TextField(
                       controller: emailController,
                       decoration: const InputDecoration(
-                        hintText: 'aftahours@gmail.com',
+                        hintText: 'Name',
                         filled: true,
-                        hintStyle: TextStyle(
-                          fontFamily: 'Title',
-                          fontSize: 16.0,
-                        ),
                         fillColor: Color.fromARGB(255, 255, 255, 255),
                         contentPadding: EdgeInsets.symmetric(
                             horizontal: 24.0, vertical: 16.0),
@@ -81,9 +80,9 @@ class LoginScreen extends StatelessWidget {
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(
-                                10.0), // Top-left corner rounded
+                                20.0), // Top-left corner rounded
                             topRight: Radius.circular(
-                                10.0), // Top-right corner rounded
+                                20.0), // Top-right corner rounded
                             bottomLeft:
                                 Radius.zero, // Bottom-left corner square
                             bottomRight: Radius.zero,
@@ -93,14 +92,69 @@ class LoginScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 2),
                     TextField(
+                      controller: emailController,
+                      decoration: const InputDecoration(
+                        hintText: 'Email',
+                        filled: true,
+                        fillColor: Color.fromARGB(255, 255, 255, 255),
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 24.0, vertical: 16.0),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.all(Radius.zero)
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    TextField(
+                      controller: emailController,
+                      decoration: const InputDecoration(
+                        hintText: 'DOB',
+                        filled: true,
+                        fillColor: Color.fromARGB(255, 255, 255, 255),
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 24.0, vertical: 16.0),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.all(Radius.zero)
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    TextField(
+                      controller: emailController,
+                      decoration: const InputDecoration(
+                        hintText: 'Phone Number',
+                        filled: true,
+                        fillColor: Color.fromARGB(255, 255, 255, 255),
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 24.0, vertical: 16.0),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.all(Radius.zero)
+                        ),
+                      ),
+                    ),const SizedBox(height: 2),
+                    TextField(
+                      controller: emailController,
+                      decoration: const InputDecoration(
+                        hintText: 'Confirm Password',
+                        filled: true,
+                        fillColor: Color.fromARGB(255, 255, 255, 255),
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 24.0, vertical: 16.0),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.all(Radius.zero)
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    TextField(
                       controller: passwordController,
                       decoration: const InputDecoration(
-                        hintText: '************',
+                        hintText: 'Password',
                         filled: true,
-                        hintStyle: TextStyle(
-                          fontFamily: 'Title',
-                          fontSize: 16.0,
-                        ),
                         fillColor: Color.fromARGB(255, 255, 255, 255),
                         contentPadding: EdgeInsets.symmetric(
                             horizontal: 24.0, vertical: 16.0),
@@ -110,8 +164,8 @@ class LoginScreen extends StatelessWidget {
                             topLeft: Radius.zero, // Top-left corner rounded
                             topRight: Radius.zero, // Top-right corner rounded
                             bottomLeft: Radius.circular(
-                                10.0), // Bottom-left corner square
-                            bottomRight: Radius.circular(10.0),
+                                20.0), // Bottom-left corner square
+                            bottomRight: Radius.circular(20.0),
                           ),
                         ),
                       ),
@@ -119,7 +173,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () => loginUser(context),
+                      onPressed: () => signUser(context),
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.all(15.0),
                         backgroundColor: const Color.fromARGB(255, 1, 1, 1),
@@ -130,29 +184,22 @@ class LoginScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(50),
                         ),
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       child: const Text(
-                        'Login',
+                        'Signup',
                       ),
                     ),
                     const SizedBox(height: 20),
+                    
+                    const SizedBox(height: 5),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/register');
+                        Navigator.pushNamed(context, '/login');
                       },
-                      child: const Text('Forgot Password?',
-                          style:
-                              TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
-                    ),
-                    const SizedBox(height: 10),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/signup');
-                      },
-                      child: const Text('Don\'t have an account? Register',
+                      child: const Text('I have an account? Login',
                           style:
                               TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
                     ),

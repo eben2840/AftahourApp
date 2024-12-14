@@ -1,4 +1,5 @@
 import 'package:aftahrs/auth/login.dart';
+import 'package:aftahrs/auth/signup.dart';
 import 'package:aftahrs/home/homepage_screen.dart';
 import 'package:aftahrs/menupage/menu_page.dart';
 import 'package:aftahrs/orderpage/order_page.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         '/orders': (context) => const OrderPage(),
         '/search': (context) => const SearchPage(),
         '/menu': (context) => const MenuPage(),
+        '/signup': (context) => Signup_RegsiterState(),
       },
     );
   }

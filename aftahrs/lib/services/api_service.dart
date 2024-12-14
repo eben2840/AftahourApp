@@ -6,8 +6,8 @@ class ApiService {
 
   /// Login API
   static Future<bool> login(String email, String password) async {
-    if (email == 'john@doe.com' && password == 'password') {
-      return true;
+    if (email == 'johndoe@me.com' && password == 'password') {
+      return true; // Simulated successful login
     }
     return false;
   }
@@ -19,7 +19,7 @@ class ApiService {
   //     headers: {'Content-Type': 'application/json'},
   //   );
 
-  //   if (response.statusCode == 200) {
+  //    if (response.statusCode == 200) {
   //     final responseData = json.decode(response.body);
   //     print('Login successful: $responseData');
   //     return true;

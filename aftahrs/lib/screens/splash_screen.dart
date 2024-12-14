@@ -1,7 +1,5 @@
-import 'package:aftahrs/auth/login.dart';
 import 'package:aftahrs/home/homepage_screen.dart';
 import 'package:aftahrs/screens/All_Boarding_Screen.dart';
-import 'package:aftahrs/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

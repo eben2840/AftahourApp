@@ -2,6 +2,8 @@ import 'package:aftahrs/auth/login.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
@@ -139,7 +141,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               onPressed: () {
                 buttonAction();
               },
-              child: Text(buttonText),
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(20.0),
                 backgroundColor: const Color.fromARGB(255, 251, 252, 252),
@@ -153,6 +154,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              child: Text(buttonText),
             ),
           ),
         ],

@@ -13,7 +13,7 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Menu"),
+        title: const Text("Orders"),
         backgroundColor: Colors.redAccent,
       ),
       body: const Center(
