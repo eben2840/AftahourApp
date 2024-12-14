@@ -6,10 +6,10 @@ class ApiService {
 
   /// Login API
   static Future<bool> login(String email, String password) async {
-    if (email == 'johndoe@example.com' && password == 'password') {
-      return true; // Simulated successful login
+    if (email == 'john@doe.com' && password == 'password') {
+      return true;
     }
-    return false; // Simulated failure
+    return false;
   }
 
   // try {

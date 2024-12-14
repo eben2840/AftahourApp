@@ -116,7 +116,7 @@ class HomepageScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(selectedIndex: 0),
+      bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 0),
     );
   }
 }

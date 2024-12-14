@@ -13,13 +13,13 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Orders"),
+        title: const Text("Menu"),
         backgroundColor: Colors.redAccent,
       ),
       body: const Center(
-        child: Text("Your orders will appear here."),
+        child: Text("Your menu will appear here."),
       ),
-      bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 1),
+      bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 3),
     );
   }
 }

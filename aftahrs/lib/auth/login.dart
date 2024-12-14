@@ -74,9 +74,9 @@ class LoginScreen extends StatelessWidget {
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(
-                                20.0), // Top-left corner rounded
+                                10.0), // Top-left corner rounded
                             topRight: Radius.circular(
-                                20.0), // Top-right corner rounded
+                                10.0), // Top-right corner rounded
                             bottomLeft:
                                 Radius.zero, // Bottom-left corner square
                             bottomRight: Radius.zero,
@@ -84,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    // const SizedBox(height: 16),
+                    const SizedBox(height: 1),
                     TextField(
                       controller: passwordController,
                       decoration: const InputDecoration(
@@ -99,8 +99,8 @@ class LoginScreen extends StatelessWidget {
                             topLeft: Radius.zero, // Top-left corner rounded
                             topRight: Radius.zero, // Top-right corner rounded
                             bottomLeft: Radius.circular(
-                                20.0), // Bottom-left corner square
-                            bottomRight: Radius.circular(20.0),
+                                10.0), // Bottom-left corner square
+                            bottomRight: Radius.circular(10.0),
                           ),
                         ),
                       ),
