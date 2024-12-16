@@ -164,10 +164,8 @@ class Signup_RegsiterState extends StatelessWidget {
                             horizontal: 24.0, vertical: 16.0),
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(20.0),
-                            bottomRight: Radius.circular(20.0),
-                          ),
+                          borderRadius: BorderRadius.all(Radius.zero),
+                          
                         ),
                       ),
                       obscureText: true,
@@ -183,7 +181,10 @@ class Signup_RegsiterState extends StatelessWidget {
                             horizontal: 24.0, vertical: 16.0),
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.all(Radius.zero),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(20.0),
+                            bottomRight: Radius.circular(20.0),
+                          ),
                         ),
                       ),
                       obscureText: true,
