@@ -6,49 +6,62 @@ class ApiService {
 
   /// Login API
   static Future<bool> login(String email, String password) async {
-    if (email == 'johndoe@me.com' && password == 'password') {
-      return true; // Simulated successful login
-    }
-    return false;
-  }
+    //   if (email == 'johndoe@me.com' && password == 'password') {
+    //     return true; // Simulated successful login
+    //   }
+    //   return false;
+    // }
 
-  // try {
-  //   final response = await http.post(
-  //     Uri.parse('$baseUrl/login'),
-  //     body: json.encode({'email': email, 'password': password}),
-  //     headers: {'Content-Type': 'application/json'},
-  //   );
-
-  //    if (response.statusCode == 200) {
-  //     final responseData = json.decode(response.body);
-  //     print('Login successful: $responseData');
-  //     return true;
-  //   } else {
-  //     print('Login failed: ${response.statusCode} - ${response.body}');
-  //     return false;
-  //   }
-  // } catch (e) {
-  //   print('Error during login: $e');
-  //   return false;
-  // }
-  // }
-
-  /// Signup API
-  static Future<bool> signup(String name, String email, String password) async {
     try {
       final response = await http.post(
-        Uri.parse('$baseUrl/signup'),
-        body: json.encode({'name': name, 'email': email, 'password': password}),
+        Uri.parse('$baseUrl/login/user'),
+        body: json.encode({'email': email, 'password': password}),
         headers: {'Content-Type': 'application/json'},
       );
 
-      if (response.statusCode == 201) {
+      if (response.statusCode == 200) {
         final responseData = json.decode(response.body);
-        print('Signup successful: $responseData');
+        print('Login successful: $responseData');
+        return true;
+        // if (responseData['success']) {
+        //   return responseData['user']; // Returning user details
+        // }
+      } else {
+        print('Login failed: ${response.statusCode} - ${response.body}');
+        return false;
+      }
+    } catch (e) {
+      print('Error during login: $e');
+      return false;
+    }
+  }
+
+  /// Signup API
+  static Future<bool> signup(String name, String email, String phone,
+      String location, String password, String confirmPassword) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/register'),
+        body: json.encode({
+          'name': name,
+          'email': email,
+          'phone': phone,
+          'location': location,
+          'password': password,
+          'confirm_password': confirmPassword,
+        }),
+        headers: {'Content-Type': 'application/json'},
+      );
+
+      if (response.statusCode == 201 || response.statusCode == 200) {
+        final responseData = json.decode(response.body);
+        print('Signup successful==============: $responseData');
         return true;
       } else {
-        print('Signup failed: ${response.statusCode} - ${response.body}');
+        print(
+            'Signup failed-==============: ${response.statusCode} - ${response.body}');
         return false;
+        // flutter run -d chrome --web-browser-flag "--disable-web-security"
       }
     } catch (e) {
       print('Error during signup: $e');

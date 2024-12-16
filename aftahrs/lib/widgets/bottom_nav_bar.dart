@@ -30,26 +30,24 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
     return Container(
       width: MediaQuery.of(context).size.width -
           60, // Adjust the width to provide space for the border radius
-      // margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(50),
-          topRight: Radius.circular(50),
-        ),
+        // borderRadius: const BorderRadius.only(
+        //   topLeft: Radius.circular(50),
+        //   topRight: Radius.circular(50),
+        // ),
         // borderRadius: BorderRadius.circular(50),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.2),
             blurRadius: 10,
             spreadRadius: 2,
+            offset: Offset(0, 20),
           ),
         ],
       ),
       child: ClipRRect(
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
-        ), // Ensure the radius applies correctly
+        borderRadius: BorderRadius.circular(50),
         child: BottomNavigationBar(
           currentIndex: widget.selectedIndex,
           onTap: (index) {
@@ -78,6 +76,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             size: 24, // Icon size when not selected
           ),
           showUnselectedLabels: false, // Hide labels
+          showSelectedLabels: true, // Hide labels
           items: [
             BottomNavigationBarItem(
               icon: MouseRegion(
@@ -101,7 +100,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                   ),
                 ),
               ),
-              label: '', // Empty label to comply with the required property
+              label: 'Home', // Empty label to comply with the required property
             ),
             BottomNavigationBarItem(
               icon: MouseRegion(

@@ -1,31 +1,52 @@
-
 import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 
 class Signup_RegsiterState extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
+  final TextEditingController locationController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   Signup_RegsiterState({super.key});
 
   void signUser(BuildContext context) async {
-    if (nameController.text.isEmpty ||emailController.text.isEmpty || passwordController.text.isEmpty) {
+    if (nameController.text.isEmpty ||
+        emailController.text.isEmpty ||
+        locationController.text.isEmpty ||
+        phoneController.text.isEmpty ||
+        passwordController.text.isEmpty ||
+        confirmPasswordController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Please fill in all fields')),
       );
       return;
     }
 
+    if (passwordController.text != confirmPasswordController.text) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Passwords do not match')),
+      );
+      return;
+    }
+
+    // Call the API
     bool success = await ApiService.signup(
       nameController.text,
       emailController.text,
+      locationController.text,
+      phoneController.text,
       passwordController.text,
+      confirmPasswordController.text,
     );
 
     if (success) {
       Navigator.pushReplacementNamed(context, '/login');
+      print('Signup successful==============:');
     } else {
+      print('Signup Unsuccessful==============:');
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('SignUp failed. Please try again.')),
       );
@@ -69,7 +90,7 @@ class Signup_RegsiterState extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     TextField(
-                      controller: emailController,
+                      controller: nameController,
                       decoration: const InputDecoration(
                         hintText: 'Name',
                         filled: true,
@@ -79,12 +100,9 @@ class Signup_RegsiterState extends StatelessWidget {
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(
-                                20.0), // Top-left corner rounded
-                            topRight: Radius.circular(
-                                20.0), // Top-right corner rounded
-                            bottomLeft:
-                                Radius.zero, // Bottom-left corner square
+                            topLeft: Radius.circular(20.0),
+                            topRight: Radius.circular(20.0),
+                            bottomLeft: Radius.zero,
                             bottomRight: Radius.zero,
                           ),
                         ),
@@ -101,28 +119,28 @@ class Signup_RegsiterState extends StatelessWidget {
                             horizontal: 24.0, vertical: 16.0),
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.all(Radius.zero)
+                          borderRadius: BorderRadius.all(Radius.zero),
                         ),
                       ),
                     ),
                     const SizedBox(height: 2),
                     TextField(
-                      controller: emailController,
+                      controller: locationController,
                       decoration: const InputDecoration(
-                        hintText: 'DOB',
+                        hintText: 'location',
                         filled: true,
                         fillColor: Color.fromARGB(255, 255, 255, 255),
                         contentPadding: EdgeInsets.symmetric(
                             horizontal: 24.0, vertical: 16.0),
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.all(Radius.zero)
+                          borderRadius: BorderRadius.all(Radius.zero),
                         ),
                       ),
                     ),
                     const SizedBox(height: 2),
                     TextField(
-                      controller: emailController,
+                      controller: phoneController,
                       decoration: const InputDecoration(
                         hintText: 'Phone Number',
                         filled: true,
@@ -131,21 +149,7 @@ class Signup_RegsiterState extends StatelessWidget {
                             horizontal: 24.0, vertical: 16.0),
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.all(Radius.zero)
-                        ),
-                      ),
-                    ),const SizedBox(height: 2),
-                    TextField(
-                      controller: emailController,
-                      decoration: const InputDecoration(
-                        hintText: 'Confirm Password',
-                        filled: true,
-                        fillColor: Color.fromARGB(255, 255, 255, 255),
-                        contentPadding: EdgeInsets.symmetric(
-                            horizontal: 24.0, vertical: 16.0),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.all(Radius.zero)
+                          borderRadius: BorderRadius.all(Radius.zero),
                         ),
                       ),
                     ),
@@ -161,12 +165,25 @@ class Signup_RegsiterState extends StatelessWidget {
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.zero, // Top-left corner rounded
-                            topRight: Radius.zero, // Top-right corner rounded
-                            bottomLeft: Radius.circular(
-                                20.0), // Bottom-left corner square
+                            bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                           ),
+                        ),
+                      ),
+                      obscureText: true,
+                    ),
+                    const SizedBox(height: 2),
+                    TextField(
+                      controller: confirmPasswordController,
+                      decoration: const InputDecoration(
+                        hintText: 'Confirm Password',
+                        filled: true,
+                        fillColor: Color.fromARGB(255, 255, 255, 255),
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 24.0, vertical: 16.0),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.all(Radius.zero),
                         ),
                       ),
                       obscureText: true,
@@ -193,15 +210,14 @@ class Signup_RegsiterState extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    
-                    const SizedBox(height: 5),
                     TextButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/login');
                       },
-                      child: const Text('I have an account? Login',
-                          style:
-                              TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+                      child: const Text(
+                        'I have an account? Login',
+                        style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+                      ),
                     ),
                   ],
                 ),
