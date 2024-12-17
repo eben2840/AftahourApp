@@ -1,11 +1,69 @@
-import 'package:aftahrs/widgets/bottom_nav_bar.dart';
-import 'package:aftahrs/widgets/store_card.dart';
+import 'package:aftahrs/widgets/store_model.dart';
 import 'package:flutter/material.dart';
-// import '../widgets/bottom_nav_bar.dart';
-// import '.../widgets/store_card.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-class HomepageScreen extends StatelessWidget {
+import '../widgets/bottom_nav_bar.dart';
+import '../widgets/store_card.dart';
+// import '../models/store_model.dart';
+
+class HomepageScreen extends StatefulWidget {
   const HomepageScreen({super.key});
+
+  @override
+  State<HomepageScreen> createState() => _HomepageScreenState();
+}
+
+class _HomepageScreenState extends State<HomepageScreen> {
+  List<Vendor> vendors = [];
+  List<Product> products = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchVendors();
+    fetchProducts();
+  }
+
+  // Fetch Vendors
+  Future<void> fetchVendors() async {
+    const String vendorApiUrl =
+        "https://backend.aftahrs.com/user/dashboard/token"; // Replace with your API
+    try {
+      final response = await http.get(Uri.parse(vendorApiUrl));
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        final List<dynamic> vendordata = data['data']['data']['vendor'];
+        setState(() {
+          vendors = vendordata.map((json) => Vendor.fromJson(json)).toList();
+        });
+      } else {
+        // print("Failed to load vendors");
+        throw Exception("Failed to load vendors");
+      }
+    } catch (e) {
+      print("Error fetching vendors: $e");
+    }
+  }
+
+  // Fetch Products
+  Future<void> fetchProducts() async {
+    const String productApiUrl =
+        "https://backend.aftahrs.com/user/dashboard/token"; // Replace with your API
+    try {
+      final response = await http.get(Uri.parse(productApiUrl));
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        setState(() {
+          products = data.map((json) => Product.fromJson(json)).toList();
+        });
+      } else {
+        throw Exception("Failed to load products");
+      }
+    } catch (e) {
+      print("Error fetching products: $e");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,43 +73,9 @@ class HomepageScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        title: const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                CircleAvatar(
-                  backgroundColor: Colors.black12,
-                  child: Icon(Icons.person, color: Colors.black),
-                ),
-                SizedBox(width: 10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Lorem Ipsum",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                    Text(
-                      "Lorem ipsum dolor sit",
-                      style: TextStyle(fontSize: 8, color: Colors.black54),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Text("North Kierland",
-                    style: TextStyle(fontSize: 10, color: Colors.black)),
-                SizedBox(width: 5),
-                Icon(Icons.location_on, color: Colors.black),
-              ],
-            ),
-          ],
+        title: const Text(
+          "Dashboard",
+          style: TextStyle(color: Colors.black),
         ),
       ),
       body: SingleChildScrollView(
@@ -60,106 +84,58 @@ class HomepageScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Search Bar
-              Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: "Search restaurant and stores",
-                        filled: true,
-                        fillColor: Colors.grey[200],
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide.none,
-                        ),
+              const Text(
+                "Vendors",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 200,
+                child: vendors.isEmpty
+                    ? const Center(child: CircularProgressIndicator())
+                    : ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: vendors.length,
+                        itemBuilder: (context, index) {
+                          final vendor = vendors[index];
+                          return StoreCard(
+                            image: vendor.image,
+                            name: vendor.name,
+                            rating: '',
+                            price: vendor.deliveryTime,
+                            deliveryTime: vendor.deliveryTime,
+                          );
+                        },
+                        separatorBuilder: (context, index) =>
+                            const SizedBox(width: 10),
                       ),
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  Icon(Icons.filter_list, color: Colors.black),
-                ],
               ),
               const SizedBox(height: 20),
-              // Local Stores Section
               const Text(
-                "Local Stores",
+                "Products",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
               SizedBox(
                 height: 200,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: const [
-                    StoreCard(
-                      image:
-                          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/640px-Good_Food_Display_-_NCI_Visuals_Online.jpg",
-                      name: "Lorem Ipsum",
-                      rating: "4.0",
-                      price: "35",
-                      deliveryTime: "20-40mins",
-                    ),
-                    SizedBox(width: 10),
-                    StoreCard(
-                      image:
-                          "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
-                      name: "Lorem Ipsum",
-                      rating: "4.2",
-                      price: "40",
-                      deliveryTime: "30-50mins",
-                    ),
-                    SizedBox(width: 10),
-                    StoreCard(
-                      image:
-                          "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
-                      name: "Lorem Ipsum",
-                      rating: "4.2",
-                      price: "40",
-                      deliveryTime: "30-50mins",
-                    ),
-                  ],
-                ),
-              ),
-
-              const Text(
-                "Local Stores",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 10),
-              SizedBox(
-                height: 200,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: const [
-                    StoreCard(
-                      image:
-                          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/640px-Good_Food_Display_-_NCI_Visuals_Online.jpg",
-                      name: "Lorem Ipsum",
-                      rating: "4.0",
-                      price: "35",
-                      deliveryTime: "20-40mins",
-                    ),
-                    SizedBox(width: 10),
-                    StoreCard(
-                      image:
-                          "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
-                      name: "Lorem Ipsum",
-                      rating: "4.2",
-                      price: "40",
-                      deliveryTime: "30-50mins",
-                    ),
-                    SizedBox(width: 10),
-                    StoreCard(
-                      image:
-                          "https://assets.digitalcontent.marksandspencer.app/image/upload/w_640,q_auto,f_auto/MS_FD_F01C_29420636_NC_X_EC_0",
-                      name: "Lorem Ipsum",
-                      rating: "4.2",
-                      price: "40",
-                      deliveryTime: "30-50mins",
-                    ),
-                  ],
-                ),
+                child: products.isEmpty
+                    ? const Center(child: CircularProgressIndicator())
+                    : ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: products.length,
+                        itemBuilder: (context, index) {
+                          final product = products[index];
+                          return StoreCard(
+                            image: product.image,
+                            name: product.name,
+                            rating: product.rating,
+                            price: product.price,
+                            deliveryTime: "In Stock",
+                          );
+                        },
+                        separatorBuilder: (context, index) =>
+                            const SizedBox(width: 10),
+                      ),
               ),
             ],
           ),

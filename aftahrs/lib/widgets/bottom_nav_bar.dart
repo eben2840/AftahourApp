@@ -30,12 +30,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
     return Container(
       width: MediaQuery.of(context).size.width -
           60, // Adjust the width to provide space for the border radius
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      // margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       decoration: BoxDecoration(
-        // borderRadius: const BorderRadius.only(
-        //   topLeft: Radius.circular(50),
-        //   topRight: Radius.circular(50),
-        // ),
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(50),
+          topRight: Radius.circular(50),
+        ),
         // borderRadius: BorderRadius.circular(50),
         boxShadow: [
           BoxShadow(
@@ -47,7 +47,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         ],
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(50),
+        // borderRadius: BorderRadius.circular(50),
         child: BottomNavigationBar(
           currentIndex: widget.selectedIndex,
           onTap: (index) {

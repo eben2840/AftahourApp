@@ -43,7 +43,7 @@ class Signup_RegsiterState extends StatelessWidget {
     );
 
     if (success) {
-      Navigator.pushReplacementNamed(context, '/login');
+      Navigator.pushReplacementNamed(context, '/homepage');
       print('Signup successful==============:');
     } else {
       print('Signup Unsuccessful==============:');
@@ -164,10 +164,7 @@ class Signup_RegsiterState extends StatelessWidget {
                             horizontal: 24.0, vertical: 16.0),
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(20.0),
-                            bottomRight: Radius.circular(20.0),
-                          ),
+                          borderRadius: BorderRadius.all(Radius.zero),
                         ),
                       ),
                       obscureText: true,
@@ -183,7 +180,10 @@ class Signup_RegsiterState extends StatelessWidget {
                             horizontal: 24.0, vertical: 16.0),
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.all(Radius.zero),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(20.0),
+                            bottomRight: Radius.circular(20.0),
+                          ),
                         ),
                       ),
                       obscureText: true,
@@ -212,7 +212,7 @@ class Signup_RegsiterState extends StatelessWidget {
                     const SizedBox(height: 20),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/login');
+                        Navigator.pushNamed(context, '/homepage');
                       },
                       child: const Text(
                         'I have an account? Login',
