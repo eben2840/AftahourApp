@@ -6,11 +6,40 @@ class ApiService {
 
   /// Login API
   static Future<bool> login(String email, String password) async {
+<<<<<<< HEAD
     //   if (email == 'johndoe@me.com' && password == 'password') {
     //     return true; // Simulated successful login
     //   }
     //   return false;
     // }
+=======
+  //   if (email == 'johndoe@me.com' && password == 'password') {
+  //     return true; // Simulated successful login
+  //   }
+  //   return false; // Simulated failure
+  // }
+
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/login'),
+        body: json.encode({'email': email, 'password': password}),
+        headers: {'Content-Type': 'application/json'},
+      );
+
+       if (response.statusCode == 200) {
+        final responseData = json.decode(response.body);
+        print('Login successful: $responseData');
+        return true;
+      } else {
+        print('Login failed: ${response.statusCode} - ${response.body}');
+        return false;
+      }
+    } catch (e) {
+      print('Error during login: $e');
+      return false;
+    }
+    }
+>>>>>>> 2b49c8f (newpush)
 
     try {
       final response = await http.post(
