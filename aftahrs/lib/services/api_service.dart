@@ -6,13 +6,6 @@ class ApiService {
 
   /// Login API
   static Future<bool> login(String email, String password) async {
-<<<<<<< HEAD
-    //   if (email == 'johndoe@me.com' && password == 'password') {
-    //     return true; // Simulated successful login
-    //   }
-    //   return false;
-    // }
-=======
   //   if (email == 'johndoe@me.com' && password == 'password') {
   //     return true; // Simulated successful login
   //   }
@@ -39,7 +32,6 @@ class ApiService {
       return false;
     }
     }
->>>>>>> 2b49c8f (newpush)
 
     try {
       final response = await http.post(
