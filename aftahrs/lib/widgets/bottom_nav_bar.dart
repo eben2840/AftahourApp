@@ -47,13 +47,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         ],
       ),
       child: ClipRRect(
-<<<<<<< HEAD
-        // borderRadius: BorderRadius.circular(50),
-=======
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),),
->>>>>>> 74cdbe5 (my ohene push)
         child: BottomNavigationBar(
           currentIndex: widget.selectedIndex,
           onTap: (index) {

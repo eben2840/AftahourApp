@@ -164,13 +164,9 @@ class Signup_RegsiterState extends StatelessWidget {
                             horizontal: 24.0, vertical: 16.0),
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
-<<<<<<< HEAD
-                          borderRadius: BorderRadius.all(Radius.zero),
-=======
                           borderRadius: BorderRadius.all(
                             Radius.zero,
                           ),
->>>>>>> 74cdbe5 (my ohene push)
                         ),
                       ),
                       obscureText: true,
