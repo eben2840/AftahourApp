@@ -70,7 +70,7 @@ class _Signup_RegsiterStateState extends State<Signup_RegsiterState> {
         context,
         'SignUp successful! Login to Continue.',
       );
-      Navigator.pushReplacementNamed(context, '/homepage');
+      Navigator.pushReplacementNamed(context, '/login');
       print('Signup successful==============:');
     } else {
       print('Signup Unsuccessful==============:');
