@@ -1,13 +1,22 @@
+import 'package:aftahrs/widgets/CustomSnackBar.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../services/api_service.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  LoginScreen({super.key});
+  bool isLoading = false;
 
-  void loginUser(BuildContext context) async {
+  Future<void> loginUser(BuildContext context) async {
     if (emailController.text.isEmpty || passwordController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Please fill in all fields')),
@@ -15,16 +24,37 @@ class LoginScreen extends StatelessWidget {
       return;
     }
 
+    setState(() {
+      isLoading = true;
+    });
+
+    await Future.delayed(Duration(seconds: 2));
+
     bool success = await ApiService.login(
       emailController.text,
       passwordController.text,
     );
 
+    setState(() {
+      isLoading = false;
+    });
+
     if (success) {
+      //save user login token
+      String token = await ApiService.getAuthToken();
+
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('authToken', token);
+
+      CustomSnackBar.showSuccessSnackBar(
+        context,
+        'Login successful! Welcome back.',
+      );
       Navigator.pushReplacementNamed(context, '/homepage');
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Login failed. Please try again.')),
+      CustomSnackBar.showErrorSnackBar(
+        context,
+        'Login failed. Please try again.',
       );
     }
   }
@@ -119,7 +149,18 @@ class LoginScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () => loginUser(context),
+                      onPressed: isLoading
+                          ? null // Disable button while loading
+                          : () async {
+                              setState(() {
+                                isLoading = true; // Show loading indicator
+                              });
+
+                              await loginUser(context);
+                              setState(() {
+                                isLoading = false; // Hide loading indicator
+                              });
+                            },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.all(15.0),
                         backgroundColor: const Color.fromARGB(255, 1, 1, 1),
@@ -130,13 +171,17 @@ class LoginScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(50),
                         ),
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      child: const Text(
-                        'Login',
-                      ),
+                      child: isLoading
+                          ? CircularProgressIndicator(
+                              color: Colors.white,
+                            )
+                          : const Text(
+                              'Login',
+                            ),
                     ),
                     const SizedBox(height: 20),
                     TextButton(

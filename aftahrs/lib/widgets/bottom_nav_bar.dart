@@ -49,7 +49,8 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       child: ClipRRect(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),),
+          topRight: Radius.circular(30),
+        ),
         child: BottomNavigationBar(
           currentIndex: widget.selectedIndex,
           onTap: (index) {
@@ -95,7 +96,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                   ),
                   padding: const EdgeInsets.all(15), // Space around the icon
                   child: Icon(
-                    Icons.home,
+                    Icons.home_rounded,
                     color:
                         widget.selectedIndex == 0 ? Colors.black : Colors.white,
                     size: 24,
@@ -167,7 +168,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                   ),
                   padding: const EdgeInsets.all(12),
                   child: Icon(
-                    Icons.menu,
+                    Icons.person,
                     color:
                         widget.selectedIndex == 3 ? Colors.black : Colors.white,
                     size: 24,

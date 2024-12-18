@@ -1,3 +1,5 @@
+import 'package:aftahrs/home/component/promocard.dart';
+// import 'package:aftahrs/searchpage/search_page.dart';
 import 'package:aftahrs/widgets/store_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -51,7 +53,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
     }
   }
 
- Future<void> fetchProducts() async {
+  Future<void> fetchProducts() async {
     const String productsApiUrl =
         "https://backend.aftahrs.com/user/dashboard/token"; // Replace with your API
     try {
@@ -129,6 +131,9 @@ class _HomepageScreenState extends State<HomepageScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // SearchPage(),
+              const PromoCard(),
+              const SizedBox(height: 10),
               Row(
                 children: [
                   const Text(
@@ -138,7 +143,10 @@ class _HomepageScreenState extends State<HomepageScreen> {
                   Spacer(),
                   Text(
                     "More",
-                    style: TextStyle(fontSize: 10, color:Colors.blue, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 10,
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -173,7 +181,10 @@ class _HomepageScreenState extends State<HomepageScreen> {
                   Spacer(),
                   Text(
                     "More",
-                    style: TextStyle(fontSize: 10, color:Colors.blue, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 10,
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold),
                   ),
                 ],
               ),

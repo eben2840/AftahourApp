@@ -1,5 +1,8 @@
+import 'package:aftahrs/menupage/component/ProfileMenu.dart';
+import 'package:aftahrs/services/api_service.dart';
 import 'package:aftahrs/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -8,56 +11,66 @@ class MenuPage extends StatefulWidget {
   State<MenuPage> createState() => _MenuPageState();
 }
 
+void logoutUser(BuildContext context) async {
+  // Clear session data
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.remove('isLoggedIn'); // Remove the session key
+  prefs.remove('authToken'); // Remove the authToken key
+
+  // Navigate back to login screen
+  print("user has been logouted successfully");
+  Navigator.pushReplacementNamed(context, '/login');
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text('user has been logout successfully')),
+  );
+  print("user has been logouted successfully");
+}
+
 class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        elevation: 0,
         backgroundColor: Colors.white,
-        automaticallyImplyLeading: false,
-        title: const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        title: const Text("Profile"),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: Column(
           children: [
-            Row(
-              children: [
-                CircleAvatar(
-                  backgroundColor: Colors.black12,
-                  child: Icon(Icons.person, color: Colors.black),
-                ),
-                SizedBox(width: 10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Lorem Ipsum",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                    Text(
-                      "Lorem ipsum dolor sit",
-                      style: TextStyle(fontSize: 8, color: Colors.black54),
-                    ),
-                  ],
-                ),
-              ],
+            // const ProfilePic(),
+            const SizedBox(height: 20),
+            ProfileMenu(
+              text: "My Account",
+              icon: "assets/icons/User Icon.svg",
+              press: () => {},
             ),
-            Row(
-              children: [
-                Text("North Kierland",
-                    style: TextStyle(fontSize: 10, color: Colors.black)),
-                SizedBox(width: 5),
-                Icon(Icons.location_on, color: Colors.black),
-              ],
+            ProfileMenu(
+              text: "Notifications",
+              icon: "assets/icons/Bell.svg",
+              press: () {},
+            ),
+            ProfileMenu(
+              text: "Settings",
+              icon: "assets/icons/Settings.svg",
+              press: () {},
+            ),
+            ProfileMenu(
+              text: "Help Center",
+              icon: "assets/icons/Question mark.svg",
+              press: () {},
+            ),
+            ProfileMenu(
+              text: "Log Out",
+              icon: "assets/icons/Log out.svg",
+              press: () {
+                // String token = 'user-authentication-token';
+                logoutUser(context);
+              },
             ),
           ],
         ),
-      ),
-      body: const Center(
-        child: Text("Your menu will appear here."),
       ),
       bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 3),
     );
