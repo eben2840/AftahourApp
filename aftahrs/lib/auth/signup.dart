@@ -68,7 +68,7 @@ class _Signup_RegsiterStateState extends State<Signup_RegsiterState> {
 
       CustomSnackBar.showSuccessSnackBar(
         context,
-        'Login successful! Welcome back.',
+        'SignUp successful! Login to Continue.',
       );
       Navigator.pushReplacementNamed(context, '/homepage');
       print('Signup successful==============:');
@@ -76,7 +76,7 @@ class _Signup_RegsiterStateState extends State<Signup_RegsiterState> {
       print('Signup Unsuccessful==============:');
       CustomSnackBar.showErrorSnackBar(
         context,
-        'Login failed. Please try again.',
+        'SignUp failed. Please try again.',
       );
     }
   }
