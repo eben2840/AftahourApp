@@ -18,8 +18,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> loginUser(BuildContext context) async {
     if (emailController.text.isEmpty || passwordController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Please fill in all fields')),
+      
+      CustomSnackBar.showErrorSnackBar(
+        context,
+        'Please fill in all fields',
       );
       return;
     }
@@ -186,7 +188,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(height: 20),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/register');
+                        Navigator.pushNamed(context, '/homepage');
                       },
                       child: const Text('Forgot Password?',
                           style:

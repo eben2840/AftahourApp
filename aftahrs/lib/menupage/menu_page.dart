@@ -1,5 +1,6 @@
 import 'package:aftahrs/menupage/component/ProfileMenu.dart';
 import 'package:aftahrs/services/api_service.dart';
+import 'package:aftahrs/widgets/CustomSnackBar.dart';
 import 'package:aftahrs/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,9 +21,10 @@ void logoutUser(BuildContext context) async {
   // Navigate back to login screen
   print("user has been logouted successfully");
   Navigator.pushReplacementNamed(context, '/login');
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(content: Text('user has been logout successfully')),
-  );
+  CustomSnackBar.showErrorSnackBar(
+        context,
+        'You have been logged out',
+      );
   print("user has been logouted successfully");
 }
 
