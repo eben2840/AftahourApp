@@ -1,4 +1,7 @@
-import 'package:aftahrs/home/component/promocard.dart';
+import 'package:aftahrs/home/component/PromoCard.dart';
+// import 'package:aftahrs/home/component/promocard.dart';
+// import 'package:aftahrs/widgets/cuisine_card.dart';
+import 'package:aftahrs/widgets/product_card.dart';
 // import 'package:aftahrs/searchpage/search_page.dart';
 import 'package:aftahrs/widgets/store_model.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +95,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
             Row(
               children: [
                 CircleAvatar(
-                  backgroundColor: Colors.black12,
+                  backgroundColor: Color.fromARGB(31, 255, 255, 255),
                   child: Icon(Icons.person, color: Colors.black),
                 ),
                 SizedBox(width: 10),
@@ -132,17 +135,18 @@ class _HomepageScreenState extends State<HomepageScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // SearchPage(),
-              const PromoCard(),
+              const PromoCardSlider(),
               const SizedBox(height: 10),
               Row(
                 children: [
                   const Text(
                     "Vendors",
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold,
+                    fontFamily: 'Body', ),
                   ),
                   Spacer(),
                   Text(
-                    "More",
+                    "Show All",
                     style: TextStyle(
                         fontSize: 10,
                         color: Colors.blue,
@@ -150,9 +154,9 @@ class _HomepageScreenState extends State<HomepageScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 2),
               SizedBox(
-                height: 200,
+                height: 180,
                 child: vendors.isEmpty
                     ? const Center(child: CircularProgressIndicator())
                     : ListView.separated(
@@ -171,16 +175,20 @@ class _HomepageScreenState extends State<HomepageScreen> {
                             const SizedBox(width: 10),
                       ),
               ),
-              const SizedBox(height: 20),
+              // cuisine image for user
+
+              // const SizedBox(height: 10),
               Row(
                 children: [
                   const Text(
                     "Products",
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 15,
+                    fontFamily: 'Body',
+                     fontWeight: FontWeight.bold),
                   ),
                   Spacer(),
                   Text(
-                    "More",
+                    "Show All",
                     style: TextStyle(
                         fontSize: 10,
                         color: Colors.blue,
@@ -188,6 +196,9 @@ class _HomepageScreenState extends State<HomepageScreen> {
                   ),
                 ],
               ),
+              // const SizedBox(height: 10),
+              
+              
               const SizedBox(height: 10),
               SizedBox(
                 height: 200,
@@ -198,11 +209,11 @@ class _HomepageScreenState extends State<HomepageScreen> {
                         itemCount: products.length,
                         itemBuilder: (context, index) {
                           final product = products[index];
-                          return StoreCard(
+                          return ProductCard(
                             image: product.image,
                             name: product.name,
                             // rating: product.rating,
-                            // price: product.price,
+                            price: product.price,
                             // deliveryTime: "In Stock",
                           );
                         },

@@ -34,13 +34,53 @@ class _MenuPageState extends State<MenuPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.white,
-        title: const Text("Profile"),
+        automaticallyImplyLeading: false,
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              children: [
+                // CircleAvatar(
+                //   // backgroundColor: Colors.black12,
+                //   // child: Icon(Icons.arrow_back, color: Colors.black),
+                // ),
+                SizedBox(width: 10),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Profile",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight:FontWeight.bold,
+                          color: Colors.black),
+                    ),
+                    // Text(
+                    //   "Lorem ipsum dolor sit",
+                    //   style: TextStyle(fontSize: 8, color: Colors.black54),
+                    // ),
+                  ],
+                ),
+              ],
+            ),
+            // Row(
+            //   children: [
+            //     Text("North Kierland",
+            //         style: TextStyle(fontSize: 10, color: Colors.black)),
+            //     SizedBox(width: 5),
+            //     Icon(Icons.location_on, color: Colors.black),
+            //   ],
+            // ),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Column(
           children: [
+            
             // const ProfilePic(),
             const SizedBox(height: 20),
             ProfileMenu(

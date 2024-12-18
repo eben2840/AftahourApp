@@ -1,58 +1,101 @@
 import 'package:flutter/material.dart';
 
-class PromoCard extends StatelessWidget {
-  const PromoCard({Key? key}) : super(key: key);
+class PromoCardSlider extends StatefulWidget {
+  const PromoCardSlider({Key? key}) : super(key: key);
+
+  @override
+  State<PromoCardSlider> createState() => _PromoCardSliderState();
+}
+
+class _PromoCardSliderState extends State<PromoCardSlider> {
+  final PageController _pageController = PageController();
+  int _currentIndex = 0;
+
+  final List<String> _imageUrls = [
+    "https://firebasestorage.googleapis.com/v0/b/ineruu-142dc.appspot.com/o/ineruu-142dc-default-rtdb%2FImages%2Fappbackground.jpg1734534371667.jpg?alt=media&token=6e571f45-49b1-437f-a262-1f190cd273aa",
+    "https://firebasestorage.googleapis.com/v0/b/ineruu-142dc.appspot.com/o/ineruu-142dc-default-rtdb%2FImages%2Fappbackground1.jpg1734534406170.jpg?alt=media&token=b46dcbf7-5b16-45c0-adfa-d251427ff81b", // Replace with your image URL
+    "https://thumbs.dreamstime.com/b/close-up-freshly-baked-pizza-banner-topped-melted-cheese-red-bell-peppers-mushrooms-parsley-wooden-serving-board-342980956.jpg", // Replace with your image URL
+    // "https://cdn.psdrepo.com/images/2x/pizza-poster-j6.jpg", // Replace with your image URL
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    // Automatic sliding
+    Future.delayed(const Duration(seconds: 3), _autoSlide);
+  }
+
+  void _autoSlide() {
+    if (_pageController.hasClients) {
+      int nextPage = (_currentIndex + 1) % _imageUrls.length;
+      _pageController.animateToPage(
+        nextPage,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+      setState(() {
+        _currentIndex = nextPage;
+      });
+      Future.delayed(const Duration(seconds: 3), _autoSlide);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 25.0),
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 150,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            gradient: const LinearGradient(colors: [
-              Color.fromARGB(255, 183, 56, 34),
-              Color.fromARGB(255, 183, 56, 34),
-            ])),
-        child: Stack(
-          children: [
-            Opacity(
-              opacity: .5,
-              child: Image.network(
-                  "https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/BACKGROUND%202.png?alt=media&token=0d003860-ba2f-4782-a5ee-5d5684cdc244",
-                  fit: BoxFit.cover),
+    return SizedBox(
+      height: 200,
+      child: Column(
+        children: [
+          Expanded(
+            child: PageView.builder(
+              controller: _pageController,
+              itemCount: _imageUrls.length,
+              onPageChanged: (index) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.network(
+                      _imageUrls[index],
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                    ),
+                  ),
+                );
+              },
             ),
-            Image.network(
-                "https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/Image.png?alt=media&token=8256c357-cf86-4f76-8c4d-4322d1ebc06c"),
-            const Align(
-              alignment: Alignment.topRight,
-              child: Padding(
-                padding: EdgeInsets.all(25.0),
-                child: Column(
-                  children: [
-                    Text(
-                      "Welcome to Aftahours.",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "be the very best with food and more",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
+          ),
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(
+              _imageUrls.length,
+              (index) => Container(
+                margin: const EdgeInsets.symmetric(horizontal: 5),
+                width: _currentIndex == index ? 12 : 8,
+                height: 8,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: _currentIndex == index
+                      ? Colors.red
+                      : Colors.grey.shade400,
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 }

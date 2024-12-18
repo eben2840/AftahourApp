@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		6A0E8FB82D133EE20005C5D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A0E8F9F2D133EE00005C5D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A0E8FA62D133EE00005C5D6;
+			remoteInfo = Connect_phone;
+		};
+		6A0E8FC22D133EE20005C5D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A0E8F9F2D133EE00005C5D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A0E8FA62D133EE00005C5D6;
+			remoteInfo = Connect_phone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6A0E8FA72D133EE00005C5D6 /* Connect_phone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connect_phone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A0E8FB72D133EE20005C5D6 /* Connect_phoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Connect_phoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A0E8FC12D133EE20005C5D6 /* Connect_phoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Connect_phoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		6A0E8FA92D133EE00005C5D6 /* Connect_phone */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Connect_phone;
+			sourceTree = "<group>";
+		};
+		6A0E8FBA2D133EE20005C5D6 /* Connect_phoneTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Connect_phoneTests;
+			sourceTree = "<group>";
+		};
+		6A0E8FC42D133EE20005C5D6 /* Connect_phoneUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Connect_phoneUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A0E8FA42D133EE00005C5D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A0E8FB42D133EE20005C5D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A0E8FBE2D133EE20005C5D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A0E8F9E2D133EE00005C5D6 = {
+			isa = PBXGroup;
+			children = (
+				6A0E8FA92D133EE00005C5D6 /* Connect_phone */,
+				6A0E8FBA2D133EE20005C5D6 /* Connect_phoneTests */,
+				6A0E8FC42D133EE20005C5D6 /* Connect_phoneUITests */,
+				6A0E8FA82D133EE00005C5D6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6A0E8FA82D133EE00005C5D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A0E8FA72D133EE00005C5D6 /* Connect_phone.app */,
+				6A0E8FB72D133EE20005C5D6 /* Connect_phoneTests.xctest */,
+				6A0E8FC12D133EE20005C5D6 /* Connect_phoneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A0E8FA62D133EE00005C5D6 /* Connect_phone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A0E8FCB2D133EE20005C5D6 /* Build configuration list for PBXNativeTarget "Connect_phone" */;
+			buildPhases = (
+				6A0E8FA32D133EE00005C5D6 /* Sources */,
+				6A0E8FA42D133EE00005C5D6 /* Frameworks */,
+				6A0E8FA52D133EE00005C5D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6A0E8FA92D133EE00005C5D6 /* Connect_phone */,
+			);
+			name = Connect_phone;
+			packageProductDependencies = (
+			);
+			productName = Connect_phone;
+			productReference = 6A0E8FA72D133EE00005C5D6 /* Connect_phone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6A0E8FB62D133EE20005C5D6 /* Connect_phoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A0E8FCE2D133EE20005C5D6 /* Build configuration list for PBXNativeTarget "Connect_phoneTests" */;
+			buildPhases = (
+				6A0E8FB32D133EE20005C5D6 /* Sources */,
+				6A0E8FB42D133EE20005C5D6 /* Frameworks */,
+				6A0E8FB52D133EE20005C5D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A0E8FB92D133EE20005C5D6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6A0E8FBA2D133EE20005C5D6 /* Connect_phoneTests */,
+			);
+			name = Connect_phoneTests;
+			packageProductDependencies = (
+			);
+			productName = Connect_phoneTests;
+			productReference = 6A0E8FB72D133EE20005C5D6 /* Connect_phoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6A0E8FC02D133EE20005C5D6 /* Connect_phoneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A0E8FD12D133EE20005C5D6 /* Build configuration list for PBXNativeTarget "Connect_phoneUITests" */;
+			buildPhases = (
+				6A0E8FBD2D133EE20005C5D6 /* Sources */,
+				6A0E8FBE2D133EE20005C5D6 /* Frameworks */,
+				6A0E8FBF2D133EE20005C5D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A0E8FC32D133EE20005C5D6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6A0E8FC42D133EE20005C5D6 /* Connect_phoneUITests */,
+			);
+			name = Connect_phoneUITests;
+			packageProductDependencies = (
+			);
+			productName = Connect_phoneUITests;
+			productReference = 6A0E8FC12D133EE20005C5D6 /* Connect_phoneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A0E8F9F2D133EE00005C5D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					6A0E8FA62D133EE00005C5D6 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					6A0E8FB62D133EE20005C5D6 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 6A0E8FA62D133EE00005C5D6;
+					};
+					6A0E8FC02D133EE20005C5D6 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 6A0E8FA62D133EE00005C5D6;
+					};
+				};
+			};
+			buildConfigurationList = 6A0E8FA22D133EE00005C5D6 /* Build configuration list for PBXProject "Connect_phone" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6A0E8F9E2D133EE00005C5D6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6A0E8FA82D133EE00005C5D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A0E8FA62D133EE00005C5D6 /* Connect_phone */,
+				6A0E8FB62D133EE20005C5D6 /* Connect_phoneTests */,
+				6A0E8FC02D133EE20005C5D6 /* Connect_phoneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A0E8FA52D133EE00005C5D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A0E8FB52D133EE20005C5D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A0E8FBF2D133EE20005C5D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A0E8FA32D133EE00005C5D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A0E8FB32D133EE20005C5D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A0E8FBD2D133EE20005C5D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A0E8FB92D133EE20005C5D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A0E8FA62D133EE00005C5D6 /* Connect_phone */;
+			targetProxy = 6A0E8FB82D133EE20005C5D6 /* PBXContainerItemProxy */;
+		};
+		6A0E8FC32D133EE20005C5D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A0E8FA62D133EE00005C5D6 /* Connect_phone */;
+			targetProxy = 6A0E8FC22D133EE20005C5D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6A0E8FC92D133EE20005C5D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6A0E8FCA2D133EE20005C5D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A0E8FCC2D133EE20005C5D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Connect_phone/Preview Content\"";
+				DEVELOPMENT_TEAM = GS4VL7632K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "presto.Connect-phone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6A0E8FCD2D133EE20005C5D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Connect_phone/Preview Content\"";
+				DEVELOPMENT_TEAM = GS4VL7632K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "presto.Connect-phone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6A0E8FCF2D133EE20005C5D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GS4VL7632K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "presto.Connect-phoneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Connect_phone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Connect_phone";
+			};
+			name = Debug;
+		};
+		6A0E8FD02D133EE20005C5D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GS4VL7632K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "presto.Connect-phoneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Connect_phone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Connect_phone";
+			};
+			name = Release;
+		};
+		6A0E8FD22D133EE20005C5D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GS4VL7632K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "presto.Connect-phoneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Connect_phone;
+			};
+			name = Debug;
+		};
+		6A0E8FD32D133EE20005C5D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GS4VL7632K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "presto.Connect-phoneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Connect_phone;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A0E8FA22D133EE00005C5D6 /* Build configuration list for PBXProject "Connect_phone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A0E8FC92D133EE20005C5D6 /* Debug */,
+				6A0E8FCA2D133EE20005C5D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A0E8FCB2D133EE20005C5D6 /* Build configuration list for PBXNativeTarget "Connect_phone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A0E8FCC2D133EE20005C5D6 /* Debug */,
+				6A0E8FCD2D133EE20005C5D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A0E8FCE2D133EE20005C5D6 /* Build configuration list for PBXNativeTarget "Connect_phoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A0E8FCF2D133EE20005C5D6 /* Debug */,
+				6A0E8FD02D133EE20005C5D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A0E8FD12D133EE20005C5D6 /* Build configuration list for PBXNativeTarget "Connect_phoneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A0E8FD22D133EE20005C5D6 /* Debug */,
+				6A0E8FD32D133EE20005C5D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6A0E8F9F2D133EE00005C5D6 /* Project object */;
+}
