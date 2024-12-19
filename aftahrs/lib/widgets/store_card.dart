@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class StoreCard extends StatelessWidget {
   final String image;
@@ -46,13 +47,21 @@ class StoreCard extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        Text(
-                          name,
-                          style: const TextStyle(
-                            fontFamily: 'Body',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                          ),
+                        Row(
+                          children: [
+                            Text(
+                              name,
+                              style: const TextStyle(
+                                fontFamily: 'Body',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                            ),
+                            const SizedBox(width: 5),
+                            SvgPicture.asset(
+                              'assets/icons/badge-check.svg',
+                            ),
+                          ],
                         ),
                         Text(
                           '0.5 mil',
