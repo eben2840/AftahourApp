@@ -7,6 +7,7 @@ import 'package:aftahrs/screens/All_Boarding_Screen.dart';
 // import 'package:aftahrs/screens/onboarding_screen.dart';
 import 'package:aftahrs/screens/splash_screen.dart';
 import 'package:aftahrs/searchpage/search_page.dart';
+import 'package:aftahrs/shop/shop.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         '/orders': (context) => const OrderPage(),
         '/search': (context) => SearchPage(),
         '/menu': (context) => const MenuPage(),
+        '/shop': (context) => const Shop(),
         '/signup': (context) => Signup_RegsiterState(),
       },
     );

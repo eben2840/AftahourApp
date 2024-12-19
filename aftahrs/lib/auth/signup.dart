@@ -1,7 +1,16 @@
+import 'package:aftahrs/widgets/CustomSnackBar.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../services/api_service.dart';
 
-class Signup_RegsiterState extends StatelessWidget {
+class Signup_RegsiterState extends StatefulWidget {
+  const Signup_RegsiterState({super.key});
+
+  @override
+  _Signup_RegsiterStateState createState() => _Signup_RegsiterStateState();
+}
+
+class _Signup_RegsiterStateState extends State<Signup_RegsiterState> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController locationController = TextEditingController();
@@ -10,7 +19,8 @@ class Signup_RegsiterState extends StatelessWidget {
   final TextEditingController confirmPasswordController =
       TextEditingController();
 
-  Signup_RegsiterState({super.key});
+  // Signup_RegsiterState({super.key});
+  bool isLoading = false;
 
   void signUser(BuildContext context) async {
     if (nameController.text.isEmpty ||
@@ -32,6 +42,10 @@ class Signup_RegsiterState extends StatelessWidget {
       return;
     }
 
+    setState(() {
+      isLoading = true;
+    });
+
     // Call the API
     bool success = await ApiService.signup(
       nameController.text,
@@ -42,13 +56,27 @@ class Signup_RegsiterState extends StatelessWidget {
       confirmPasswordController.text,
     );
 
+    setState(() {
+      isLoading = false;
+    });
+
     if (success) {
+      // String token = await ApiService.getAuthToken();
+
+      // SharedPreferences prefs = await SharedPreferences.getInstance();
+      // prefs.setString('authToken', token);
+
+      CustomSnackBar.showSuccessSnackBar(
+        context,
+        'SignUp successful! Login to Continue.',
+      );
       Navigator.pushReplacementNamed(context, '/login');
       print('Signup successful==============:');
     } else {
       print('Signup Unsuccessful==============:');
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('SignUp failed. Please try again.')),
+      CustomSnackBar.showErrorSnackBar(
+        context,
+        'SignUp failed. Please try again.',
       );
     }
   }
@@ -164,8 +192,9 @@ class Signup_RegsiterState extends StatelessWidget {
                             horizontal: 24.0, vertical: 16.0),
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.all(Radius.zero),
-                          
+                          borderRadius: BorderRadius.all(
+                            Radius.zero,
+                          ),
                         ),
                       ),
                       obscureText: true,
@@ -191,7 +220,17 @@ class Signup_RegsiterState extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () => signUser(context),
+                      onPressed: isLoading
+                          ? null // Disable button while loading
+                          : () async {
+                              setState(() {
+                                isLoading = true; // Show loading indicator
+                              });
+                              signUser(context);
+                              setState(() {
+                                isLoading = false; // Hide loading indicator
+                              });
+                            },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.all(15.0),
                         backgroundColor: const Color.fromARGB(255, 1, 1, 1),
@@ -206,9 +245,13 @@ class Signup_RegsiterState extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      child: const Text(
-                        'Signup',
-                      ),
+                      child: isLoading
+                          ? CircularProgressIndicator(
+                              color: Colors.white,
+                            )
+                          : const Text(
+                              'Signup',
+                            ),
                     ),
                     const SizedBox(height: 20),
                     TextButton(

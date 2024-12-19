@@ -34,8 +34,10 @@ dependencies:
   # http: ^0.15.0
   http: ^1.2.2
   # carousel_slider: ^4.2.1
+  # flutter_svg: ^0.18.0
   shared_preferences: ^2.0.15
   dot_navigation_bar: ^1.0.2
+  flutter_launcher_icons: ^0.14.2 
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -52,6 +54,29 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+
+# flutter_icons:
+#   android: true
+#   ios: true 
+#   image_path: "assets/images/logo-aftahrs.png"
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo-aftahrs.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/logo-aftahrs.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/images/logo-aftahrs.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/images/logo-aftahrs.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -71,8 +96,25 @@ flutter:
     - assets/images/onboarding.png
     - assets/images/onboarding2.png
     - assets/images/Splash bk.png
+    - assets/images/appbackground1.jpg
     - assets/images/Signup logo.png
     - assets/images/Login_Signup.png
+    # - assets/icons/bell.svg
+    - assets/icons/Bell.svg
+    - assets/icons/usd-circle.svg
+    - assets/icons/user (1).svg
+    - assets/icons/exit.svg
+    - assets/icons/gift.svg
+    - assets/icons/shop.svg
+    - assets/icons/shop (2).svg
+    - assets/icons/search2.svg
+    - assets/images/chicken-burger-with-flying-ingredients-hd-transparent-png-701751710853243v9zgwqwepn-removebg-preview.png
+    - assets/icons/search.svg
+    - assets/icons/home (1).svg
+    - assets/icons/receipt.svg
+    - assets/icons/file-chart-line.svg
+    - assets/icons/interrogation.svg
+    # - assets/icons/Log out.svg
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
