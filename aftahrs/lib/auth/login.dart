@@ -187,7 +187,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(height: 20),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/login');
+                        Navigator.pushNamed(context, '/homepage');
                       },
                       child: const Text('Forgot Password?',
                           style:

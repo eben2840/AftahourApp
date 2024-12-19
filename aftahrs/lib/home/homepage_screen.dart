@@ -1,4 +1,5 @@
 import 'package:aftahrs/home/component/PromoCard.dart';
+import 'package:aftahrs/home/component/SearchField.dart';
 // import 'package:aftahrs/home/component/promocard.dart';
 // import 'package:aftahrs/widgets/cuisine_card.dart';
 import 'package:aftahrs/widgets/product_card.dart';
@@ -7,7 +8,6 @@ import 'package:aftahrs/widgets/store_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
 import '../widgets/bottom_nav_bar.dart';
 import '../widgets/store_card.dart';
 // import '../models/store_model.dart';
@@ -135,14 +135,21 @@ class _HomepageScreenState extends State<HomepageScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // SearchPage(),
+              const SearchField(),
+              SizedBox(
+                height: 20,
+              ),
               const PromoCardSlider(),
               const SizedBox(height: 10),
               Row(
                 children: [
                   const Text(
                     "Vendors",
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold,
-                    fontFamily: 'Body', ),
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Body',
+                    ),
                   ),
                   Spacer(),
                   Text(
@@ -182,9 +189,10 @@ class _HomepageScreenState extends State<HomepageScreen> {
                 children: [
                   const Text(
                     "Products",
-                    style: TextStyle(fontSize: 15,
-                    fontFamily: 'Body',
-                     fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontFamily: 'Body',
+                        fontWeight: FontWeight.bold),
                   ),
                   Spacer(),
                   Text(
@@ -197,8 +205,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                 ],
               ),
               // const SizedBox(height: 10),
-              
-              
+
               const SizedBox(height: 10),
               SizedBox(
                 height: 200,
@@ -225,7 +232,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 0),
+      bottomNavigationBar: const CustomBottomNavigationBar(initialIndex: 0),
     );
   }
 }

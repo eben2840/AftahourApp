@@ -99,6 +99,22 @@ flutter:
     - assets/images/appbackground1.jpg
     - assets/images/Signup logo.png
     - assets/images/Login_Signup.png
+    # - assets/icons/bell.svg
+    - assets/icons/Bell.svg
+    - assets/icons/usd-circle.svg
+    - assets/icons/user (1).svg
+    - assets/icons/exit.svg
+    - assets/icons/gift.svg
+    - assets/icons/shop.svg
+    - assets/icons/shop (2).svg
+    - assets/icons/search2.svg
+    - assets/images/chicken-burger-with-flying-ingredients-hd-transparent-png-701751710853243v9zgwqwepn-removebg-preview.png
+    - assets/icons/search.svg
+    - assets/icons/home (1).svg
+    - assets/icons/receipt.svg
+    - assets/icons/file-chart-line.svg
+    - assets/icons/interrogation.svg
+    # - assets/icons/Log out.svg
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

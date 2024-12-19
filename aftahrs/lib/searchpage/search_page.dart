@@ -56,49 +56,49 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        automaticallyImplyLeading: false,
-        title: const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                CircleAvatar(
-                  backgroundColor: Colors.black12,
-                  child: Icon(Icons.person, color: Colors.black),
-                ),
-                SizedBox(width: 10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Lorem Ipsum",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                    Text(
-                      "Lorem ipsum dolor sit",
-                      style: TextStyle(fontSize: 8, color: Colors.black54),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Text("North Kierland",
-                    style: TextStyle(fontSize: 10, color: Colors.black)),
-                SizedBox(width: 5),
-                Icon(Icons.location_on, color: Colors.black),
-              ],
-            ),
-          ],
-        ),
-      ),
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   backgroundColor: Colors.white,
+      //   automaticallyImplyLeading: false,
+      //   title: const Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //     children: [
+      //       Row(
+      //         children: [
+      //           CircleAvatar(
+      //             backgroundColor: Colors.black12,
+      //             child: Icon(Icons.person, color: Colors.black),
+      //           ),
+      //           SizedBox(width: 10),
+      //           Column(
+      //             crossAxisAlignment: CrossAxisAlignment.start,
+      //             children: [
+      //               Text(
+      //                 "Lorem Ipsum",
+      //                 style: TextStyle(
+      //                     fontSize: 16,
+      //                     fontWeight: FontWeight.bold,
+      //                     color: Colors.black),
+      //               ),
+      //               Text(
+      //                 "Lorem ipsum dolor sit",
+      //                 style: TextStyle(fontSize: 8, color: Colors.black54),
+      //               ),
+      //             ],
+      //           ),
+      //         ],
+      //       ),
+      //       Row(
+      //         children: [
+      //           Text("North Kierland",
+      //               style: TextStyle(fontSize: 10, color: Colors.black)),
+      //           SizedBox(width: 5),
+      //           Icon(Icons.location_on, color: Colors.black),
+      //         ],
+      //       ),
+      //     ],
+      //   ),
+      // ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -109,7 +109,7 @@ class _SearchPageState extends State<SearchPage> {
                   child: TextField(
                     controller: _searchController,
                     decoration: InputDecoration(
-                      hintText: "Search restaurant and stores",
+                      hintText: "Search restaurant",
                       filled: true,
                       fillColor: Colors.grey[200],
                       border: OutlineInputBorder(
@@ -162,7 +162,7 @@ class _SearchPageState extends State<SearchPage> {
           ],
         ),
       ),
-      bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 2),
+      bottomNavigationBar: const CustomBottomNavigationBar(initialIndex: 2),
     );
   }
 }

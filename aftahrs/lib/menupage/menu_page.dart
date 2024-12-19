@@ -1,4 +1,6 @@
+import 'package:aftahrs/menupage/component/DiscountBanner.dart';
 import 'package:aftahrs/menupage/component/ProfileMenu.dart';
+// import 'package:aftahrs/menupage/component/profile_images';
 import 'package:aftahrs/services/api_service.dart';
 import 'package:aftahrs/widgets/CustomSnackBar.dart';
 import 'package:aftahrs/widgets/bottom_nav_bar.dart';
@@ -80,11 +82,15 @@ class _MenuPageState extends State<MenuPage> {
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Column(
           children: [
-            // const ProfilePic(),
+            // ProfilePic(),
+            // Text(
+            //   "Annette Black",
+            // ),
+            // DiscountBanner(),
             const SizedBox(height: 20),
             ProfileMenu(
               text: "My Account",
-              icon: "assets/icons/User Icon.svg",
+              icon: "assets/icons/user (1).svg",
               press: () => {},
             ),
             ProfileMenu(
@@ -93,27 +99,33 @@ class _MenuPageState extends State<MenuPage> {
               press: () {},
             ),
             ProfileMenu(
-              text: "Settings",
-              icon: "assets/icons/Settings.svg",
+              text: "About Us",
+              icon: "assets/icons/file-chart-line.svg",
+              press: () {},
+            ),
+            ProfileMenu(
+              text: "Payment",
+              icon: "assets/icons/usd-circle.svg",
               press: () {},
             ),
             ProfileMenu(
               text: "Help Center",
-              icon: "assets/icons/Question mark.svg",
+              icon: "assets/icons/interrogation.svg",
               press: () {},
             ),
             ProfileMenu(
               text: "Log Out",
-              icon: "assets/icons/Log out.svg",
+              icon: "assets/icons/exit.svg",
               press: () {
                 // String token = 'user-authentication-token';
                 logoutUser(context);
               },
             ),
+            DiscountBanner(),
           ],
         ),
       ),
-      bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 3),
+      bottomNavigationBar: const CustomBottomNavigationBar(initialIndex: 4),
     );
   }
 }
