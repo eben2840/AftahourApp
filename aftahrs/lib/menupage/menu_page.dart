@@ -22,9 +22,9 @@ void logoutUser(BuildContext context) async {
   print("user has been logouted successfully");
   Navigator.pushReplacementNamed(context, '/login');
   CustomSnackBar.showErrorSnackBar(
-        context,
-        'You have been logged out',
-      );
+    context,
+    'You have been logged out',
+  );
   print("user has been logouted successfully");
 }
 
@@ -35,7 +35,7 @@ class _MenuPageState extends State<MenuPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text("Profile"),
+        // title: const Text("Profile"),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(vertical: 20),

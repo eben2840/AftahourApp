@@ -18,7 +18,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> loginUser(BuildContext context) async {
     if (emailController.text.isEmpty || passwordController.text.isEmpty) {
-      
       CustomSnackBar.showErrorSnackBar(
         context,
         'Please fill in all fields',
