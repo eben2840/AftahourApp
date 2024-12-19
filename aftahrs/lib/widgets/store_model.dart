@@ -35,13 +35,13 @@ class Vendor {
 class Product {
   final String image;
   final String name;
-  // final String price;
+  final String price;
   // final String rating;
 
   Product({
     required this.image,
     required this.name,
-    // required this.price,
+    required this.price,
     // required this.rating,
   });
 
@@ -49,7 +49,7 @@ class Product {
     return Product(
       image: json['image'] ?? 'image',
       name: json['name'] ?? 'name',
-      // price: json['price'] ?? 'price',
+      price: json['price'] ?? 'price',
       // rating: json['rating'] ?? 'rating',
     );
   }
@@ -58,7 +58,7 @@ class Product {
     return {
       'image': image,
       'name': name,
-      // 'price': price,
+      'price': price,
       // 'rating': rating,
 
     };

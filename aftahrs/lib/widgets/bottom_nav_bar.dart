@@ -33,8 +33,8 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       // margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(50),
-          topRight: Radius.circular(50),
+          topLeft: Radius.circular(0),
+          topRight: Radius.circular(20),
         ),
         // borderRadius: BorderRadius.circular(50),
         boxShadow: [
@@ -65,41 +65,23 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             }
           },
           type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.black, // Background color for all items
-          selectedItemColor:
-              Colors.black, // Icon color when an item is selected
-          unselectedItemColor:
-              Colors.white, // Icon color when an item is not selected
-          selectedIconTheme: const IconThemeData(
-            color: Colors.black, // Change the selected icon to black
-            size: 30, // Increase the selected icon size
-          ),
-          unselectedIconTheme: const IconThemeData(
-            color: Colors.white, // Change the unselected icon to white
-            size: 24, // Icon size when not selected
-          ),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255), // Background color for all items
+          
           showUnselectedLabels: false, // Hide labels
-          showSelectedLabels: true, // Hide labels
+          showSelectedLabels: false, // Hide labels
           items: [
             BottomNavigationBarItem(
               icon: MouseRegion(
                 onEnter: (_) => _onEnter(0),
                 onExit: (_) => _onExit(),
                 child: Container(
-                  decoration: BoxDecoration(
-                    color: widget.selectedIndex == 0
-                        ? Colors.white
-                        : (_hoverIndex == 0
-                            ? Colors.grey[700] // Hover color for non-selected
-                            : Colors.transparent),
-                    borderRadius: BorderRadius.circular(50), // Rounded corners
-                  ),
-                  padding: const EdgeInsets.all(15), // Space around the icon
+                  
+                  // padding: const EdgeInsets.all(5), // Space around the icon
                   child: Icon(
                     Icons.home_rounded,
                     color:
-                        widget.selectedIndex == 0 ? Colors.black : Colors.white,
-                    size: 24,
+                        widget.selectedIndex == 0 ? const Color.fromARGB(255, 136, 12, 12) : Color.fromARGB(255, 235, 234, 234),
+                    size: 26,
                   ),
                 ),
               ),
@@ -110,72 +92,58 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 onEnter: (_) => _onEnter(1),
                 onExit: (_) => _onExit(),
                 child: Container(
-                  decoration: BoxDecoration(
-                    color: widget.selectedIndex == 1
-                        ? Colors.white
-                        : (_hoverIndex == 1
-                            ? Colors.grey[700]
-                            : Colors.transparent),
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  padding: const EdgeInsets.all(12),
+                  
+                  // padding: const EdgeInsets.all(5),
                   child: Icon(
                     Icons.receipt,
                     color:
-                        widget.selectedIndex == 1 ? Colors.black : Colors.white,
-                    size: 24,
+                        widget.selectedIndex == 1 ? const Color.fromARGB(255, 136, 12, 12): Color.fromARGB(255, 235, 234, 234),
+                    size: 26,
                   ),
                 ),
               ),
-              label: '', // Empty label to comply with the required property
+              label: 'Delivery', // Empty label to comply with the required property
             ),
             BottomNavigationBarItem(
               icon: MouseRegion(
                 onEnter: (_) => _onEnter(2),
                 onExit: (_) => _onExit(),
                 child: Container(
-                  decoration: BoxDecoration(
-                    color: widget.selectedIndex == 2
-                        ? Colors.white
-                        : (_hoverIndex == 2
-                            ? Colors.grey[700]
-                            : Colors.transparent),
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  padding: const EdgeInsets.all(12),
+                  
+                  // padding: const EdgeInsets.all(5),
                   child: Icon(
                     Icons.search,
                     color:
-                        widget.selectedIndex == 2 ? Colors.black : Colors.white,
-                    size: 24,
+                        widget.selectedIndex == 2 ? const Color.fromARGB(255, 136, 12, 12): Color.fromARGB(255, 235, 234, 234),
+                    size: 26,
                   ),
                 ),
               ),
-              label: '', // Empty label to comply with the required property
+              label: 'Search', // Empty label to comply with the required property
             ),
             BottomNavigationBarItem(
               icon: MouseRegion(
                 onEnter: (_) => _onEnter(3),
                 onExit: (_) => _onExit(),
                 child: Container(
-                  decoration: BoxDecoration(
-                    color: widget.selectedIndex == 3
-                        ? Colors.white
-                        : (_hoverIndex == 3
-                            ? Colors.grey[700]
-                            : Colors.transparent),
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  padding: const EdgeInsets.all(12),
+                  // decoration: BoxDecoration(
+                  //   color: widget.selectedIndex == 3
+                  //       ? Colors.white
+                  //       : (_hoverIndex == 3
+                  //           ? Colors.grey[700]
+                  //           : Colors.transparent),
+                  //   borderRadius: BorderRadius.circular(50),
+                  // ),
+                  // padding: const EdgeInsets.all(5),
                   child: Icon(
                     Icons.person,
                     color:
-                        widget.selectedIndex == 3 ? Colors.black : Colors.white,
-                    size: 24,
+                        widget.selectedIndex == 3 ? const Color.fromARGB(255, 136, 12, 12) : Color.fromARGB(255, 235, 234, 234),
+                    size: 26,
                   ),
                 ),
               ),
-              label: '', // Empty label to comply with the required property
+              label: 'Profile', // Empty label to comply with the required property
             ),
           ],
         ),

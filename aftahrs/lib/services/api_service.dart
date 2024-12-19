@@ -24,7 +24,8 @@ class ApiService {
       if (response.statusCode == 200) {
         final responseData = json.decode(response.body);
         print('Login successful: $responseData');
-        String token = responseData['token'];
+
+        String token = responseData['data']['token'];
         print('token: $token');
 
         // SharedPreferences prefs = await SharedPreferences.getInstance();
