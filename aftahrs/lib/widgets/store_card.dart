@@ -60,11 +60,14 @@ class StoreCard extends StatelessWidget {
                             const SizedBox(width: 5),
                             SvgPicture.asset(
                               'assets/icons/badge-check.svg',
+                              color: const Color.fromARGB(255, 132, 12, 12),
+                              width: 15,
+                              height: 15,
                             ),
                           ],
                         ),
                         Text(
-                          '0.5 mil',
+                          '0.53 mil',
                           style: const TextStyle(
                             fontFamily: 'Body',
                             color: Color.fromARGB(255, 132, 12, 12),
