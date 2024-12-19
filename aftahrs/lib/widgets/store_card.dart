@@ -18,7 +18,7 @@ class StoreCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.antiAlias,
-      width: 170,
+      width: 160,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -33,7 +33,7 @@ class StoreCard extends StatelessWidget {
                   ? image
                   : "https://images.ctfassets.net/awb1we50v0om/2Spf80TME2zIhLqsi3Zxv9/919421a45f3260ee426c99c35235f1c8/Plates03__3__copy3.jpg",
               fit: BoxFit.cover, // Ensures the image covers the entire space
-              height: 140,
+              height: 120,
               width: double.infinity, // Matches the container's width
             ),
           ),

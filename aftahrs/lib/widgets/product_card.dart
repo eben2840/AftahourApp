@@ -42,7 +42,7 @@ class ProductCard extends StatelessWidget {
                       ? image
                       : "https://images.ctfassets.net/awb1we50v0om/2Spf80TME2zIhLqsi3Zxv9/919421a45f3260ee426c99c35235f1c8/Plates03__3__copy3.jpg",
                   fit: BoxFit.cover,
-                  height: 160,
+                  height: 140,
                   width: double.infinity,
                 ),
                 // Gradient Overlay
