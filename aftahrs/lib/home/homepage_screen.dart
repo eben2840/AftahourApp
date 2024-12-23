@@ -144,7 +144,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
               Row(
                 children: [
                   const Text(
-                    "Vendors",
+                    "Restaurants",
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
@@ -188,7 +188,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
               Row(
                 children: [
                   const Text(
-                    "Products",
+                    "Mystery Boxes",
                     style: TextStyle(
                         fontSize: 15,
                         fontFamily: 'Body',

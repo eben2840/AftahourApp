@@ -1,3 +1,4 @@
+import 'package:aftahrs/auth/login.dart';
 import 'package:aftahrs/home/homepage_screen.dart';
 import 'package:aftahrs/screens/All_Boarding_Screen.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
       );
     } else {
       if (isLoggedIn) {
-        // User is logged in, navigate to HomePage
+        // User is logged in, navigate to the HomePage
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -53,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-              builder: (_) => OnboardingScreen()), // Navigate to login screen
+              builder: (_) => LoginScreen()), // Navigate to login screen
         );
       }
     }

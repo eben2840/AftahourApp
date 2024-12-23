@@ -58,7 +58,7 @@ class OrderPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              '/Users/admin/Documents/aftahrs/aftahrs/assets/images/logo-aftahrs1.png',
+              'assets/images/logo-aftahrs1.png',
               width: 100,
               height: 100,
             ),
