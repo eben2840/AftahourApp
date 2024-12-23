@@ -22,9 +22,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   // List of pages
   final List<Widget> pages = [
     HomepageScreen(), // index 0
-    OrderPage(), // index 1
+    Shop(), // index 1
     SearchPage(), // index 2
-    Shop(), // index 3
+    OrderPage(), // index 3
     MenuPage(), // index 4
   ];
 
@@ -102,13 +102,13 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               icon: Padding(
                 padding: const EdgeInsets.only(bottom: 3),
                 child: SvgPicture.asset(
-                  'assets/icons/receipt.svg',
+                  'assets/icons/shop (2).svg',
                   color: selectedIndex == 1
                       ? const Color.fromARGB(255, 136, 12, 12)
                       : Colors.grey,
                 ),
               ),
-              label: 'Delivery',
+              label: 'Shops',
             ),
             BottomNavigationBarItem(
               icon: Padding(
@@ -126,13 +126,13 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               icon: Padding(
                 padding: const EdgeInsets.only(bottom: 3),
                 child: SvgPicture.asset(
-                  'assets/icons/shop (2).svg',
+                  'assets/icons/receipt.svg',
                   color: selectedIndex == 3
                       ? const Color.fromARGB(255, 136, 12, 12)
                       : Colors.grey,
                 ),
               ),
-              label: 'Shops',
+              label: 'Orders',
             ),
             BottomNavigationBarItem(
               icon: Padding(
@@ -144,7 +144,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                       : Colors.grey,
                 ),
               ),
-              label: 'Profile',
+              label: 'Account',
             ),
           ],
         ),

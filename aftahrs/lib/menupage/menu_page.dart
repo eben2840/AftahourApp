@@ -59,15 +59,15 @@ class _MenuPageState extends State<MenuPage> {
                           fontWeight: FontWeight.bold,
                           color: Colors.black),
                     ),
-                    
                   ],
                 ),
               ],
             ),
             Row(
               children: [
-                
-                Icon(Icons.settings, color: Colors.black,
+                Icon(
+                  Icons.settings,
+                  color: Colors.black,
                 ),
               ],
             ),
@@ -82,30 +82,37 @@ class _MenuPageState extends State<MenuPage> {
             // Text(
             //   "Annette Black",
             // ),
+            DiscountBanner(),
             // DiscountBanner(),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             ProfileMenu(
               text: "My Account",
               icon: "assets/icons/user (1).svg",
               press: () => {},
             ),
             ProfileMenu(
-              text: "Notifications",
-              icon: "assets/icons/Bell.svg",
-              press: () {},
-            ),
-            ProfileMenu(
-              text: "About Us",
-              icon: "assets/icons/file-chart-line.svg",
-              press: () {},
-            ),
-            ProfileMenu(
               text: "Payment",
               icon: "assets/icons/usd-circle.svg",
               press: () {},
             ),
+            // ProfileMenu(
+            //   text: "Notifications",
+            //   icon: "assets/icons/Bell.svg",
+            //   press: () {},
+            // ),
             ProfileMenu(
-              text: "Help Center",
+              text: "Settings",
+              icon: "assets/icons/Bell.svg",
+              press: () {},
+            ),
+            ProfileMenu(
+              text: "About",
+              icon: "assets/icons/file-chart-line.svg",
+              press: () {},
+            ),
+
+            ProfileMenu(
+              text: "Support Center",
               icon: "assets/icons/interrogation.svg",
               press: () {},
             ),
@@ -117,7 +124,6 @@ class _MenuPageState extends State<MenuPage> {
                 logoutUser(context);
               },
             ),
-            DiscountBanner(),
           ],
         ),
       ),
