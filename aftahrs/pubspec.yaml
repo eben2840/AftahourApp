@@ -105,6 +105,7 @@ flutter:
     - assets/icons/user (1).svg
     - assets/icons/exit.svg
     - assets/icons/gift.svg
+    - assets/images/logo-aftahrs1.png
     - assets/icons/shop.svg
     - assets/icons/shop (2).svg
     - assets/icons/badge-check.svg
