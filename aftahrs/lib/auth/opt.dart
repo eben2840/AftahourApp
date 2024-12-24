@@ -16,6 +16,12 @@ class OtpScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 36),
+                  Image.asset(
+                    'assets/images/logo-aftahrs1.png',
+                    width: 100,
+                    height: 100,
+                  ),
+                  const SizedBox(height: 16),
                   const Text(
                     "Verify your email address",
                     style: TextStyle(
@@ -45,7 +51,7 @@ class OtpScreen extends StatelessWidget {
                   // Spacer(
                   //   flex: 1,
                   // ),
-                  SizedBox(height: 250),
+                  SizedBox(height: 100),
                   TextButton(
                     onPressed: () {
                       Navigator.pushNamed(context, '/login');

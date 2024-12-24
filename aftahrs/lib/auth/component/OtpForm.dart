@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:aftahrs/widgets/CustomSnackBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
@@ -13,27 +14,32 @@ class OtpForm extends StatefulWidget {
 
 class _OtpFormState extends State<OtpForm> {
   final List<TextEditingController> _otpControllers =
-      List.generate(4, (index) => TextEditingController());
+      List.generate(6, (index) => TextEditingController());
 
   Future<void> verifyOtp() async {
     final otp = _otpControllers.map((controller) => controller.text).join();
-    if (otp.length != 4) {
+    if (otp.length != 6) {
       // Ensure OTP is fully entered
-      showDialog(
-        context: context,
-        builder: (context) => const AlertDialog(
-          title: Text("Error"),
-          content: Text("Please enter a complete 4-digit OTP."),
-        ),
+      CustomSnackBar.showErrorSnackBar(
+        context,
+        'Please enter a complete 4-digit OTP.',
       );
+      // showDialog(
+      //   context: context,
+      //   builder: (context) => const AlertDialog(
+      //     title: Text("Error"),
+      //     content: Text("Please enter a complete 4-digit OTP."),
+      //   ),
+      // );
       return;
     }
 
     try {
       final response = await http.post(
-        Uri.parse("https://vendor.aftahrs.com/verify-otp"), // Update endpoint
+        Uri.parse("https://backend.aftahrs.com/request_otp"), // Update endpoint
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({"otp": otp}),
+        // headers: {'Content-Type': 'application/json'},
       );
 
       if (response.statusCode == 200) {
