@@ -152,12 +152,18 @@ class _HomepageScreenState extends State<HomepageScreen> {
                     ),
                   ),
                   Spacer(),
-                  Text(
-                    "Show All",
-                    style: TextStyle(
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/newone');
+                    },
+                    child: Text(
+                      "Show All",
+                      style: TextStyle(
                         fontSize: 10,
                         color: Colors.blue,
-                        fontWeight: FontWeight.bold),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ],
               ),

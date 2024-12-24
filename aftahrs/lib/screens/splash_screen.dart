@@ -1,4 +1,5 @@
 import 'package:aftahrs/auth/login.dart';
+import 'package:aftahrs/auth/skip.dart';
 import 'package:aftahrs/home/homepage_screen.dart';
 import 'package:aftahrs/screens/All_Boarding_Screen.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-              builder: (_) => LoginScreen()), // Navigate to login screen
+              builder: (_) => Skipscreen()), // Navigate to login screen
         );
       }
     }

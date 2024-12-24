@@ -9,7 +9,7 @@ class DiscountBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: double.infinity,
-        margin: const EdgeInsets.all(10),
+        margin: const EdgeInsets.all(20),
         padding: const EdgeInsets.symmetric(
           horizontal: 30,
           vertical: 16,

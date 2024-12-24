@@ -149,6 +149,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       obscureText: true,
                     ),
                     const SizedBox(height: 20),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/homepage');
+                      },
+                      child: const Text('Forgot Password?',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            decoration: TextDecoration.underline,
+                            fontStyle: FontStyle.italic,
+                          )),
+                    ),
+                    const SizedBox(height: 10),
                     ElevatedButton(
                       onPressed: isLoading
                           ? null // Disable button while loading
@@ -163,7 +175,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               });
                             },
                       style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.all(15.0),
+                        padding: const EdgeInsets.all(20.0),
                         backgroundColor: const Color.fromARGB(255, 1, 1, 1),
                         foregroundColor:
                             const Color.fromARGB(255, 253, 252, 252),
@@ -181,26 +193,165 @@ class _LoginScreenState extends State<LoginScreen> {
                               color: Colors.white,
                             )
                           : const Text(
-                              'Login',
+                              'Continue',
                             ),
                     ),
                     const SizedBox(height: 20),
-                    TextButton(
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Divider(
+                            color: Colors.black, // Line color
+                            thickness: 0.1, // Line thickness
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Text(
+                            'Or signup with us',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Divider(
+                            color: Colors.black, // Line color
+                            thickness: 0.1, // Line thickness
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/homepage');
+                        Navigator.pushNamed(context, '#');
                       },
-                      child: const Text('Forgot Password?',
-                          style:
-                              TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.all(20.0),
+                        backgroundColor:
+                            const Color.fromARGB(255, 224, 223, 223),
+                        foregroundColor:
+                            const Color.fromARGB(255, 253, 252, 252),
+                        minimumSize: const Size(double.infinity, 40),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        textStyle: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment
+                            .center, // Centers content in the Row
+                        children: [
+                          Image.asset(
+                            'assets/images/GoogleLogo-canvas-404-300px.original.png',
+                            width: 20,
+                          ),
+                          const SizedBox(
+                              width:
+                                  8), // Adds space between the image and text
+                          const Text(
+                            'Continue with Google',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          // const SizedBox(
+                          //     width:
+                          //         8), // Adds space between the text and icon
+                          // const Icon(Icons.arrow_forward_ios),
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 10),
-                    TextButton(
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '#');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.all(20.0),
+                        backgroundColor:
+                            const Color.fromARGB(255, 224, 223, 223),
+                        foregroundColor:
+                            const Color.fromARGB(255, 253, 252, 252),
+                        minimumSize: const Size(double.infinity, 40),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        textStyle: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                              'assets/images/png-transparent-apple-logo-logo-apple-icon-information-apple-logo-logo-monochrome-black-removebg-preview.png',
+                              width: 30),
+                          // SizedBox(width: 100),
+                          const SizedBox(
+                              width:
+                                  8), // Adds space between the image and text
+                          const Text(
+                            'Continue with Apple',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    ElevatedButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/signup');
                       },
-                      child: const Text('Don\'t have an account? Register',
-                          style:
-                              TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.all(20.0),
+                        backgroundColor:
+                            const Color.fromARGB(255, 224, 223, 223),
+                        foregroundColor:
+                            const Color.fromARGB(255, 253, 252, 252),
+                        minimumSize: const Size(double.infinity, 40),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        textStyle: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // SvgPicture.asset(
+                          //   'assets/icons ser (1).svg',
+                          //   width: 20,
+                          //   color: Colors.white,
+                          //   height: 20,
+                          // ),
+                          Icon(Icons.person_outline_sharp,
+                              color: const Color.fromARGB(255, 1, 0, 0)),
+                          // Image.asset('assets/images/Splash bk.png', width: 10),
+                          const SizedBox(
+                              width:
+                                  8), // Adds space between the image and text
+                          const Text(
+                            'Use Email Address',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

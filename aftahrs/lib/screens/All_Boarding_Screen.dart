@@ -1,4 +1,5 @@
 import 'package:aftahrs/auth/login.dart';
+import 'package:aftahrs/auth/skip.dart';
 import 'package:aftahrs/home/homepage_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +36,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   void _proceed(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => HomepageScreen()),
+      MaterialPageRoute(builder: (context) => Skipscreen()),
     );
   }
 

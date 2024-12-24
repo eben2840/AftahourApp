@@ -1,13 +1,170 @@
-import 'package:aftahrs/widgets/bottom_nav_bar.dart';
+import 'package:aftahrs/home/component/PromoCard.dart';
+import 'package:aftahrs/home/component/SearchField.dart';
+// import 'package:aftahrs/home/component/promocard.dart';
+// import 'package:aftahrs/widgets/cuisine_card.dart';
+// import 'package:aftahrs/widgets/product_card.dart';
+// import 'package:aftahrs/searchpage/search_page.dart';
+import 'package:aftahrs/widgets/store_model.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import '../widgets/bottom_nav_bar.dart';
+import '../widgets/store_card.dart';
+// import '../models/store_model.dart';
 
-class Shop extends StatelessWidget {
+class Shop extends StatefulWidget {
   const Shop({super.key});
+
+  @override
+  State<Shop> createState() => _ShopState();
+}
+
+class _ShopState extends State<Shop> {
+  List<dynamic> vendors = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchVendors();
+  }
+
+  // Fetch Vendors
+  Future<void> fetchVendors() async {
+    const String vendorApiUrl =
+        "https://backend.aftahrs.com/user/dashboard/token"; // Replace with your API
+    try {
+      final response = await http.get(Uri.parse(vendorApiUrl));
+      if (response.statusCode == 200) {
+        // final List<Vendor>data = json.decode(response.body)['data']['data']['vendors'];
+        final data = json.decode(response.body)['data']['data']['vendors'];
+        print("data");
+        print(data);
+        // final List<dynamic> vendordata = data['data']['data']['vendors'];
+        setState(() {
+          vendors = data.map((json) => Vendor.fromJson(json)).toList();
+        });
+        print("data");
+        // print(vendordata);
+      } else {
+        // print("Failed to load vendors");
+        throw Exception("Failed to load vendors");
+      }
+    } catch (e) {
+      print("Error fetching vendors: $e");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const CustomBottomNavigationBar(initialIndex: 3),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                CircleAvatar(
+                  backgroundColor: Color.fromARGB(31, 255, 255, 255),
+                  child: Icon(Icons.person, color: Colors.black),
+                ),
+                SizedBox(width: 10),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Lorem Ipsum",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                    ),
+                    Text(
+                      "Lorem ipsum dolor sit",
+                      style: TextStyle(fontSize: 8, color: Colors.black54),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Text("North Kierland",
+                    style: TextStyle(fontSize: 10, color: Colors.black)),
+                SizedBox(width: 5),
+                Icon(Icons.location_on, color: Colors.black),
+              ],
+            ),
+          ],
+        ),
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // SearchPage(),
+              const SearchField(),
+              SizedBox(
+                height: 20,
+              ),
+              // const PromoCardSlider(),
+              const SizedBox(height: 10),
+              Row(
+                children: [
+                  const Text(
+                    "Restaurants",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Body',
+                    ),
+                  ),
+                  // Spacer(),
+                  // Text(
+                  //   "Show All",
+                  //   style: TextStyle(
+                  //       fontSize: 10,
+                  //       color: Colors.blue,
+                  //       fontWeight: FontWeight.bold),
+                  // ),
+                ],
+              ),
+              const SizedBox(height: 2),
+              SizedBox(
+                height: 180,
+                child: vendors.isEmpty
+                    ? const Center(child: CircularProgressIndicator())
+                    : ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: vendors.length,
+                        itemBuilder: (context, index) {
+                          final vendor = vendors[index];
+                          return StoreCard(
+                            image: vendor.image,
+                            name: vendor.name,
+                            // rating: '',
+                            // price: vendor.deliveryTime,
+                          );
+                        },
+                        separatorBuilder: (context, index) =>
+                            const SizedBox(width: 10),
+                      ),
+              ),
+              // cuisine image for user
+
+              // const SizedBox(height: 10),
+
+              // const SizedBox(height: 10),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: const CustomBottomNavigationBar(initialIndex: 1),
     );
   }
 }

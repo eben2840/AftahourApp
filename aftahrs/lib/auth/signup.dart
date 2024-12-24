@@ -70,7 +70,7 @@ class _Signup_RegsiterStateState extends State<Signup_RegsiterState> {
         context,
         'SignUp successful! Login to Continue.',
       );
-      Navigator.pushReplacementNamed(context, '/login');
+      Navigator.pushReplacementNamed(context, '/otp');
       print('Signup successful==============:');
     } else {
       print('Signup Unsuccessful==============:');
@@ -256,7 +256,7 @@ class _Signup_RegsiterStateState extends State<Signup_RegsiterState> {
                     const SizedBox(height: 20),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/login');
+                        Navigator.pushNamed(context, '/otp');
                       },
                       child: const Text(
                         'I have an account? Login',
